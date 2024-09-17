@@ -57,6 +57,33 @@ app.get('/messages/:messageId', async (req, res) => {
     })
   }
 })
+
+// route to handle the about us page
+app.get('/about', (req, res) => {
+  res.json({
+    paragraphs: [
+      "Hello, my name is Brian Zou. I am a computer science student \
+      at New York University. Besides computer science, I am also interested in \
+      creative writing as well as the arts. I decided to take the AGILE course \
+      to help expand my knowlege of the AGILE workflow and process, as well as to work \
+      on an awesome project with some friends.",
+
+      "A fun hobby of mine is drawing - I enjoy drawing characters from popular media \
+      as well as drawing friends and such. I also enjoy dancing, although my dance skills are very \
+      lackluster. While I don't consider this to be a hobby, I also enjoy going out in the city \
+      and thrifting at the many boutique and upcycling stores in the city. It's a great \
+      way to help the environment while getting some cool new fashionable wear.",
+
+      "Another well known fact about me is my obsession for matcha. Matcha is one of my favorite drinks \
+      because of its versatility and very savory nature. I don't mind other tea lattes, but \
+      they don't hold a candle to the 'grassy' flavor of matcha. I heard that people don't like \
+      matcha because of that so-called grassy flavor, but I think that the somewhat earthy yet rich taste \
+      is what makes matcha so delightful!"
+    ],
+    image: "/brian_zou_picture.png"
+  })
+})
+
 // a route to handle logging out users
 app.post('/messages/save', async (req, res) => {
   // try to save the message to the database
